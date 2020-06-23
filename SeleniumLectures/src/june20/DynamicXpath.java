@@ -9,9 +9,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-import utility.Utility;
-
-public class Submit {
+public class DynamicXpath {
 
 	public static void main(String[] args) throws InterruptedException {
 		
@@ -22,6 +20,13 @@ public class Submit {
 		WebDriver driver = new ChromeDriver();
 		
 		
+        //
+        
+       //1. Go to google.com
+		driver.get("https://www.quora.com/");
+		
+		
+		driver.findElement(By.xpath(""));
 		
 		
 		
@@ -29,13 +34,7 @@ public class Submit {
 		
 		
 		
-		driver.get("https://duotech.io");
 		
-		String actual = driver.findElement(By.xpath("//div[@id='comp-k05i54p9']//span[@style='font-weight:bold;']")).getText();
-		
-		String expected = "WHY QA?";
-		
-		Utility.assertEquals(expected, actual);
 		
 		
 
