@@ -1,5 +1,7 @@
 package june27;
 
+import java.time.Duration;
+import java.util.NoSuchElementException;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
@@ -38,7 +40,10 @@ public class ExplicitWaits {
         
         //Fluent waits
         
-        Wait<WebDriver> fluent = new FluentWait<WebDriver>(driver);
+        Wait<WebDriver> fluent = new FluentWait<WebDriver>(driver).pollingEvery(Duration.ofSeconds(2))
+        															.withTimeout(Duration.ofSeconds(10))
+        															.ignoring(NoSuchElementException.class);
+        		
         
        
         
